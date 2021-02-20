@@ -1,7 +1,10 @@
+import { getAllByPlaceholderText } from '@testing-library/react';
 import React, { useState } from 'react';
 
-const Form = () => {
+const Form = ({ setFormData }) => {
 	const [input, setInput] = useState({
+		id: 0,
+		date: new Date().toISOString(),
 		title: '',
 		note: '',
 	});
@@ -10,12 +13,23 @@ const Form = () => {
 		setInput({
 			...input,
 			[e.target.name]: e.target.value,
+			date: new Date().toISOString(),
+			id: 5,
 		});
+	}
+
+	const onSubmit = (e) => {
+		e.preventDefault();
+		setFormData(input)
+		setInput({
+			title: '',
+			note: '',
+		})
 	}
 
 	return (
 		<div className='form-container'>
-			<form>
+			<form onSubmit={onSubmit}>
 				<div className="input-container">
 					<label>Title</label>
 					<input type="text" name='title' onChange={onChange} value={input.title} />
