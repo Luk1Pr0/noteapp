@@ -89,11 +89,24 @@ body {
 }
 
 .input-container input {
+  color: #443b3a;
+  outline: none;
+  border: none;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 1rem;
+  padding: 5px 0;
   width: 100%;
   font-size: 2rem;
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .input-container textarea {
+  color: #443b3a;
+  outline: none;
+  border: none;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 1rem;
+  padding: 1rem;
   min-width: 100%;
   max-width: 100%;
   min-height: 30vh;

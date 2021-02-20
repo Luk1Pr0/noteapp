@@ -31,11 +31,11 @@ const Form = ({ setFormData, formData }) => {
 			<form onSubmit={onSubmit}>
 				<div className="input-container">
 					<label>Title</label>
-					<input type="text" name='title' onChange={onChange} value={input.title} />
+					<input type="text" name='title' onChange={onChange} value={input.title} required placeholder='Learned react hooks...' />
 				</div>
 				<div className="input-container">
 					<label>Note</label>
-					<textarea type="text" name='note' onChange={onChange} value={input.note} />
+					<textarea type="text" name='note' onChange={onChange} value={input.note} required placeholder='Today I have learned how to create state with react hooks...' />
 				</div>
 				<div className="form__btn__container">
 					<button>Add Note</button>

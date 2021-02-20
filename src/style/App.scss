@@ -6,6 +6,15 @@
 	align-items: $align-item;
 }
 
+@mixin inputStyle {
+	color: rgb(68, 59, 58);
+	outline: none;
+	border: none;
+	background: rgba(255, 255, 255, 0.5);
+	border-radius: 1rem;
+}
+
+
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -50,11 +59,16 @@ body {
 	}
 
 	input {
+		@include inputStyle();
+		padding: 5px 0;
 		width: 100%;
 		font-size: 2rem;
+		background: rgba(255, 255, 255, 0.5);
 	}
 
 	textarea {
+		@include inputStyle();
+		padding: 1rem;
 		min-width: 100%;
 		max-width: 100%;
 		min-height: 30vh;
