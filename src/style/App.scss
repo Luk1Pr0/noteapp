@@ -31,6 +31,7 @@ body {
 		min-height: 80vh;
 		@include flex(column, center);
 		flex-wrap: nowrap;
+		box-shadow: 0 10px 20px 1px rgba(0, 0, 0, 0.3);
 	}
 }
 
@@ -68,15 +69,47 @@ body {
 	button {
 		font-size: 1rem;
 		font-weight: 700;
-		border: 2px solid whitesmoke;
-		color: whitesmoke;
+		border: 2px solid rgb(250, 143, 143);
+		color: rgb(250, 143, 143);
 		padding: 0.5rem 1rem;
 		outline: none;
 		background: transparent;
 		cursor: pointer;
-		transition: 0.2s ease;
+		transition: all 0.2s ease;
+		animation: heartbeat 1s 5s infinite;
+
 		&:hover {
-			transform: scale(0.9);
+			border: 2px solid whitesmoke;
+			color: whitesmoke;
+			animation: none;
 		}
+	}
+}
+
+// Animation
+@keyframes heartbeat {
+	0% {
+		color: whitesmoke;
+		border: 2px solid whitesmoke;
+	}
+	15% {
+		color: rgb(250, 143, 143);
+		border: 2px solid rgb(250, 143, 143);
+	}
+	30% {
+		color: whitesmoke;
+		border: 2px solid whitesmoke;
+	}
+	45% {
+		color: rgb(250, 143, 143);
+		border: 2px solid rgb(250, 143, 143);
+	}
+	50% {
+		color: whitesmoke;
+		border: 2px solid whitesmoke;
+	}
+	100% {
+		color: whitesmoke;
+		border: 2px solid whitesmoke;
 	}
 }

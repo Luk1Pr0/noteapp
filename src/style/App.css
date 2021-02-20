@@ -54,6 +54,8 @@ body {
           align-items: center;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
+  -webkit-box-shadow: 0 10px 20px 1px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 10px 20px 1px rgba(0, 0, 0, 0.3);
 }
 
 .input-container {
@@ -106,18 +108,76 @@ body {
 .form__btn__container button {
   font-size: 1rem;
   font-weight: 700;
-  border: 2px solid whitesmoke;
-  color: whitesmoke;
+  border: 2px solid #fa8f8f;
+  color: #fa8f8f;
   padding: 0.5rem 1rem;
   outline: none;
   background: transparent;
   cursor: pointer;
-  -webkit-transition: 0.2s ease;
-  transition: 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  -webkit-animation: heartbeat 1s 5s infinite;
+          animation: heartbeat 1s 5s infinite;
 }
 
 .form__btn__container button:hover {
-  -webkit-transform: scale(0.9);
-          transform: scale(0.9);
+  border: 2px solid whitesmoke;
+  color: whitesmoke;
+  -webkit-animation: none;
+          animation: none;
+}
+
+@-webkit-keyframes heartbeat {
+  0% {
+    color: whitesmoke;
+    border: 2px solid whitesmoke;
+  }
+  15% {
+    color: #fa8f8f;
+    border: 2px solid #fa8f8f;
+  }
+  30% {
+    color: whitesmoke;
+    border: 2px solid whitesmoke;
+  }
+  45% {
+    color: #fa8f8f;
+    border: 2px solid #fa8f8f;
+  }
+  50% {
+    color: whitesmoke;
+    border: 2px solid whitesmoke;
+  }
+  100% {
+    color: whitesmoke;
+    border: 2px solid whitesmoke;
+  }
+}
+
+@keyframes heartbeat {
+  0% {
+    color: whitesmoke;
+    border: 2px solid whitesmoke;
+  }
+  15% {
+    color: #fa8f8f;
+    border: 2px solid #fa8f8f;
+  }
+  30% {
+    color: whitesmoke;
+    border: 2px solid whitesmoke;
+  }
+  45% {
+    color: #fa8f8f;
+    border: 2px solid #fa8f8f;
+  }
+  50% {
+    color: whitesmoke;
+    border: 2px solid whitesmoke;
+  }
+  100% {
+    color: whitesmoke;
+    border: 2px solid whitesmoke;
+  }
 }
 /*# sourceMappingURL=App.css.map */
