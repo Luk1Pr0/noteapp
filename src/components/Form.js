@@ -1,7 +1,6 @@
-import { getAllByPlaceholderText } from '@testing-library/react';
 import React, { useState } from 'react';
 
-const Form = ({ setFormData }) => {
+const Form = ({ setFormData, formData }) => {
 	const [input, setInput] = useState({
 		id: 0,
 		date: new Date().toISOString(),
@@ -20,7 +19,7 @@ const Form = ({ setFormData }) => {
 
 	const onSubmit = (e) => {
 		e.preventDefault();
-		setFormData(input)
+		setFormData([...formData, input]);
 		setInput({
 			title: '',
 			note: '',

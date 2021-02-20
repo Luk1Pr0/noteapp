@@ -7,19 +7,12 @@ import NoteList from './components/NoteList';
 
 const App = () => {
 
-	const [formData, setFormData] = useState({
-		id: '',
-		date: Date,
-		title: '',
-		content: ''
-	})
-
-	console.log(formData);
+	const [formData, setFormData] = useState([]);
 
 	return (
 		<div className="App">
-			<Form setFormData={setFormData} />
-			<NoteList />
+			<Form setFormData={setFormData} formData={formData} />
+			<NoteList formData={formData} />
 		</div>
 	);
 }

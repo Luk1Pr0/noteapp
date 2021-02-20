@@ -3,7 +3,7 @@ import React from 'react';
 // Components
 import NoteItem from './NoteItem';
 
-const NoteList = () => {
+const NoteList = ({ formData }) => {
 
 	const notes = [
 		{
@@ -42,9 +42,12 @@ const NoteList = () => {
 		<div className='notelist-container'>
 			<ul>
 				{
-					notes.map(note => (
-						<NoteItem key={note.id} title={note.title} content={note.content} date={note.date} />
-					))
+					!formData.length ?
+						'No notes'
+						:
+						formData.map(data => (
+							<NoteItem title={data.title} content={data.note} date={data.date} />
+						))
 				}
 			</ul>
 		</div>
