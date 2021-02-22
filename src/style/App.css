@@ -12,6 +12,21 @@ body {
   color: whitesmoke;
 }
 
+button {
+  font-weight: 700;
+  border: 2px solid whitesmoke;
+  color: whitesmoke;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
 .form-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -122,8 +137,8 @@ body {
 .form__btn__container button {
   font-size: 1rem;
   font-weight: 700;
-  border: 2px solid #fa8f8f;
-  color: #fa8f8f;
+  border: 2px solid rgba(245, 245, 245, 0.5);
+  color: rgba(245, 245, 245, 0.5);
   padding: 0.5rem 1rem;
   outline: none;
   background: transparent;
@@ -187,7 +202,7 @@ li {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
-  min-height: 25vh;
+  min-height: 30vh;
   list-style: none;
   background: rgba(0, 0, 0, 0.5);
   -webkit-box-shadow: 0 10px 20px 1px rgba(0, 0, 0, 0.2);
@@ -203,15 +218,71 @@ li {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
+li .action-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  flex-wrap: wrap;
+}
+
+li .action-container .button__container {
+  margin: 0.5rem;
+}
+
+li .action-container .button__container button {
+  padding: 0.2rem 0.6rem;
+  color: rgba(245, 245, 245, 0.5);
+  border: 2px solid rgba(245, 245, 245, 0.5);
+}
+
+li .action-container .button__container button:hover {
+  color: whitesmoke;
+  border: 2px solid whitesmoke;
+}
+
 li h2 {
-  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+li .content-container {
+  margin: 2rem 0;
+  text-align: left;
+}
+
+.alert {
+  width: 100%;
+  height: auto;
+}
+
+.alert h2 {
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+
+.text--notify {
+  color: #c5f80a;
+  font-weight: 700;
 }
 
 @-webkit-keyframes heartbeat {
@@ -220,16 +291,16 @@ li h2 {
     border: 2px solid whitesmoke;
   }
   15% {
-    color: #fa8f8f;
-    border: 2px solid #fa8f8f;
+    color: rgba(245, 245, 245, 0.2);
+    border: 2px solid rgba(245, 245, 245, 0.2);
   }
   30% {
     color: whitesmoke;
     border: 2px solid whitesmoke;
   }
   45% {
-    color: #fa8f8f;
-    border: 2px solid #fa8f8f;
+    color: rgba(245, 245, 245, 0.2);
+    border: 2px solid rgba(245, 245, 245, 0.2);
   }
   50% {
     color: whitesmoke;
@@ -247,16 +318,16 @@ li h2 {
     border: 2px solid whitesmoke;
   }
   15% {
-    color: #fa8f8f;
-    border: 2px solid #fa8f8f;
+    color: rgba(245, 245, 245, 0.2);
+    border: 2px solid rgba(245, 245, 245, 0.2);
   }
   30% {
     color: whitesmoke;
     border: 2px solid whitesmoke;
   }
   45% {
-    color: #fa8f8f;
-    border: 2px solid #fa8f8f;
+    color: rgba(245, 245, 245, 0.2);
+    border: 2px solid rgba(245, 245, 245, 0.2);
   }
   50% {
     color: whitesmoke;

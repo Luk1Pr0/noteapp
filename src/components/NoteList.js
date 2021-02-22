@@ -11,10 +11,10 @@ const NoteList = ({ formData }) => {
 			<ul>
 				{
 					!formData.length ?
-						<Alert msg='No notes found' />
+						<Alert msg='No notes found!' />
 						:
 						formData.map(data => (
-							<NoteItem key={data.id} title={data.title} content={data.note} date={data.date} />
+							<NoteItem key={data.id} title={data.title} content={data.note} date={data.date} id={data.id} notes={formData} />
 						))
 				}
 			</ul>

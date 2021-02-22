@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const Form = ({ setFormData, formData }) => {
 	const [input, setInput] = useState({
-		id: 0,
+		id: Math.random(),
 		date: new Date().toISOString(),
 		title: '',
 		note: '',
@@ -13,7 +13,7 @@ const Form = ({ setFormData, formData }) => {
 			...input,
 			[e.target.name]: e.target.value,
 			date: new Date().toISOString(),
-			id: 5,
+			id: Math.random(),
 		});
 	}
 
@@ -31,11 +31,11 @@ const Form = ({ setFormData, formData }) => {
 			<form onSubmit={onSubmit}>
 				<div className="input-container">
 					<label>Title</label>
-					<input type="text" name='title' onChange={onChange} value={input.title} required placeholder='Learned react hooks...' />
+					<input type="text" name='title' onChange={onChange} value={input.title} required placeholder='Learnt react hooks...' />
 				</div>
 				<div className="input-container">
 					<label>Note</label>
-					<textarea type="text" name='note' onChange={onChange} value={input.note} required placeholder='Today I have learned how to create state with react hooks...' />
+					<textarea type="text" name='note' onChange={onChange} value={input.note} required placeholder='Today I have learnt how to create state with react hooks...' />
 				</div>
 				<div className="form__btn__container">
 					<button>Add Note</button>

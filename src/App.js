@@ -4,7 +4,6 @@ import './style/App.css';
 // Components
 import Form from './components/Form';
 import NoteList from './components/NoteList';
-import Alert from './components/Alert';
 
 const App = () => {
 

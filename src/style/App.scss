@@ -27,6 +27,20 @@ body {
 	color: whitesmoke;
 }
 
+button {
+	font-weight: 700;
+	border: 2px solid whitesmoke;
+	color: whitesmoke;
+	outline: none;
+	background: transparent;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+p {
+	font-size: 1.2rem;
+}
+
 .form-container {
 	@include flex();
 	width: 100%;
@@ -83,8 +97,8 @@ body {
 	button {
 		font-size: 1rem;
 		font-weight: 700;
-		border: 2px solid rgb(250, 143, 143);
-		color: rgb(250, 143, 143);
+		border: 2px solid rgba(245, 245, 245, 0.5);
+		color: rgba(245, 245, 245, 0.5);
 		padding: 0.5rem 1rem;
 		outline: none;
 		background: transparent;
@@ -116,17 +130,57 @@ body {
 li {
 	min-width: 45%;
 	flex-grow: 1;
-	min-height: 25vh;
+	min-height: 30vh;
 	list-style: none;
 	background: rgba(0, 0, 0, 0.5);
 	box-shadow: 0 10px 20px 1px rgba(0, 0, 0, 0.2);
 	padding: 1rem;
 	margin: 1rem;
-	@include flex(column, space-around);
-	
-	h2 {
-		margin-bottom: 1rem;
+	@include flex(column, space-between);
+
+	.action-container {
+		width: 100%;
+		@include flex(row, flex-end, center);
+		flex-wrap: wrap;
+
+		.button__container {
+			margin: 0.5rem;
+
+			button {
+				padding: 0.2rem 0.6rem;
+				color: rgba(245, 245, 245, 0.5);
+				border: 2px solid rgba(245, 245, 245, 0.5);
+				&:hover {
+					color: rgb(245, 245, 245);
+					border: 2px solid rgb(245, 245, 245);
+				}
+			}
+		}
 	}
+
+	h2 {
+		font-size: 2rem;
+	}
+
+	.content-container {
+		margin: 2rem 0;
+		text-align: left;
+	}
+}
+
+.alert {
+	width: 100%;
+	height: auto;
+
+	h2 {
+		font-size: 3rem;
+		text-transform: uppercase;
+	}
+}
+
+.text--notify {
+	color: rgb(197, 248, 10);
+	font-weight: 700;
 }
 
 
@@ -137,16 +191,16 @@ li {
 		border: 2px solid whitesmoke;
 	}
 	15% {
-		color: rgb(250, 143, 143);
-		border: 2px solid rgb(250, 143, 143);
+		color: rgba(245, 245, 245, 0.2);
+		border: 2px solid rgba(245, 245, 245, 0.2);
 	}
 	30% {
 		color: whitesmoke;
 		border: 2px solid whitesmoke;
 	}
 	45% {
-		color: rgb(250, 143, 143);
-		border: 2px solid rgb(250, 143, 143);
+		color: rgba(245, 245, 245, 0.2);
+		border: 2px solid rgba(245, 245, 245, 0.2);
 	}
 	50% {
 		color: whitesmoke;
