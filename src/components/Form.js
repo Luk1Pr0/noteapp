@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-const Form = ({ formData, setFormData }) => {
+const Form = ({ formData, setFormData, editNote }) => {
 
 	const [input, setInput] = useState({
 		id: Math.random(),
@@ -9,8 +9,25 @@ const Form = ({ formData, setFormData }) => {
 		note: '',
 	});
 
-	const onChange = (e) => {
 
+
+	useEffect(() => {
+		const note = editNote[0];
+		if (note !== undefined) {
+			// const { id, date, title, note } = note;
+			setInput({
+				id: note.id,
+				date: note.date,
+				title: note.title,
+				note: note.note
+			})
+		} else {
+			console.log(note);
+		}
+
+	}, [editNote]);
+
+	const onChange = (e) => {
 		setInput({
 			...input,
 			[e.target.name]: e.target.value,

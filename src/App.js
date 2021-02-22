@@ -8,6 +8,7 @@ import NoteList from './components/NoteList';
 const App = () => {
 
 	const [formData, setFormData] = useState([]);
+	const [editNote, setEditNote] = useState({});
 
 	useEffect(() => {
 		updateFromLocalStorage();
@@ -28,8 +29,8 @@ const App = () => {
 
 	return (
 		<div className="App">
-			<Form formData={formData} setFormData={setFormData} />
-			<NoteList formData={formData} setFormData={setFormData} />
+			<Form formData={formData} setFormData={setFormData} editNote={editNote} />
+			<NoteList formData={formData} setFormData={setFormData} setEditNote={setEditNote} />
 		</div>
 	);
 }

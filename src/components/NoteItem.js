@@ -1,6 +1,6 @@
 import React from 'react';
 
-const NoteItem = ({ date, title, content, id, formData, setFormData }) => {
+const NoteItem = ({ date, title, content, id, formData, setFormData, setEditNote }) => {
 
 	const splitDate = date.split('T');
 	const formattedDate = splitDate[0].split('-').reverse().join('/');
@@ -9,7 +9,10 @@ const NoteItem = ({ date, title, content, id, formData, setFormData }) => {
 	const onClick = (e) => {
 		let action = e.target.textContent.toLowerCase();
 		if (action === 'edit') {
-			console.log('edit');
+			let filterNote = formData.filter(note => {
+				return note.id === id;
+			})
+			setEditNote(filterNote);
 		} else {
 			setFormData(
 				formData.filter(note => {
