@@ -9,22 +9,8 @@ const Form = ({ formData, setFormData, editNote }) => {
 		note: '',
 	});
 
-
-
 	useEffect(() => {
-		const note = editNote[0];
-		if (note !== undefined) {
-			// const { id, date, title, note } = note;
-			setInput({
-				id: note.id,
-				date: note.date,
-				title: note.title,
-				note: note.note
-			})
-		} else {
-			console.log(note);
-		}
-
+		editMode();
 	}, [editNote]);
 
 	const onChange = (e) => {
@@ -43,6 +29,18 @@ const Form = ({ formData, setFormData, editNote }) => {
 			title: '',
 			note: '',
 		});
+	}
+
+	const editMode = () => {
+		const note = editNote[0];
+		// Remove the edited note so that there are no duplicated
+		const updatedFormData = formData.filter(data => data.id !== note.id);
+		if (note !== undefined) {
+			setInput({ ...note, });
+		} else {
+			return;
+		}
+		setFormData(updatedFormData);
 	}
 
 	return (
