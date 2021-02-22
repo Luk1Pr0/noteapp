@@ -45,14 +45,15 @@ p {
           align-items: center;
   width: 100%;
   height: auto;
+  position: fixed;
 }
 
 .form-container form {
   background: #f05342;
   border-radius: 2rem;
   margin: 2rem 0;
-  width: 50%;
-  min-height: 70vh;
+  min-width: 50%;
+  height: 70vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -68,10 +69,9 @@ p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-shadow: 0 10px 20px 1px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 10px 20px 1px rgba(0, 0, 0, 0.3);
+  flex-wrap: wrap;
+  -webkit-box-shadow: 10px -15px 20px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 10px -15px 20px 1px rgba(0, 0, 0, 0.2);
 }
 
 .input-container {
@@ -94,7 +94,7 @@ p {
           align-items: center;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  margin: 1rem 0;
+  margin: 1rem;
 }
 
 .input-container label {
@@ -157,7 +157,7 @@ p {
 }
 
 .notelist-container {
-  background: #f05342;
+  background: rgba(240, 83, 66, 0.9);
   width: 100%;
   min-height: 40vh;
   display: -webkit-box;
@@ -175,6 +175,10 @@ p {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+  position: relative;
+  top: 90vh;
+  -webkit-box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.2);
 }
 
 .notelist-container ul {
@@ -198,13 +202,13 @@ p {
 }
 
 li {
-  min-width: 45%;
+  width: 45%;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
   min-height: 30vh;
   list-style: none;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
   -webkit-box-shadow: 0 10px 20px 1px rgba(0, 0, 0, 0.2);
           box-shadow: 0 10px 20px 1px rgba(0, 0, 0, 0.2);
   padding: 1rem;
