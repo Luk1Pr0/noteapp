@@ -4,7 +4,7 @@ import React from 'react';
 import NoteItem from './NoteItem';
 import Alert from './Alert';
 
-const NoteList = ({ formData }) => {
+const NoteList = ({ formData, setFormData }) => {
 
 	return (
 		<div className='notelist-container'>
@@ -14,7 +14,7 @@ const NoteList = ({ formData }) => {
 						<Alert msg='No notes found!' />
 						:
 						formData.map(data => (
-							<NoteItem key={data.id} title={data.title} content={data.note} date={data.date} id={data.id} notes={formData} />
+							<NoteItem key={data.id} title={data.title} content={data.note} date={data.date} id={data.id} notes={formData} setFormData={setFormData} />
 						))
 				}
 			</ul>

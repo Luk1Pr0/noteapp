@@ -12,7 +12,7 @@ const App = () => {
 	return (
 		<div className="App">
 			<Form setFormData={setFormData} formData={formData} />
-			<NoteList formData={formData} />
+			<NoteList formData={formData} setFormData={setFormData} />
 		</div>
 	);
 }

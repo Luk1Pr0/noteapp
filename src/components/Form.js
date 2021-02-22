@@ -23,7 +23,7 @@ const Form = ({ setFormData, formData }) => {
 		setInput({
 			title: '',
 			note: '',
-		})
+		});
 	}
 
 	return (

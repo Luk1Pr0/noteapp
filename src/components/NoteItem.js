@@ -1,6 +1,6 @@
 import React from 'react';
 
-const NoteItem = ({ date, title, content, id, notes }) => {
+const NoteItem = ({ date, title, content, id, notes, setFormData }) => {
 
 	const splitDate = date.split('T');
 	const formattedDate = splitDate[0].split('-').reverse().join('/');
@@ -11,13 +11,11 @@ const NoteItem = ({ date, title, content, id, notes }) => {
 		if (action === 'edit') {
 			console.log('edit mode');
 		} else {
-			console.log('delete mode');
-			notes.filter(note => {
-				console.log(note);
-				console.log(id);
-				return note.id === id;
-			});
-			console.log(notes);
+			setFormData(
+				notes.filter(note => {
+					return note.id !== id;
+				})
+			);
 		}
 	}
 
