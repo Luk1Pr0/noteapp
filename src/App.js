@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './style/App.css';
 
 // Components
@@ -9,9 +9,26 @@ const App = () => {
 
 	const [formData, setFormData] = useState([]);
 
+	useEffect(() => {
+		updateFromLocalStorage();
+	}, []);
+
+	useEffect(() => {
+		updateLocalStorage();
+	}, [formData]);
+
+	const updateLocalStorage = () => {
+		localStorage.setItem('notes', JSON.stringify(formData));
+	}
+
+	const updateFromLocalStorage = () => {
+		let notes = JSON.parse(localStorage.getItem('notes'));
+		setFormData(notes);
+	}
+
 	return (
 		<div className="App">
-			<Form setFormData={setFormData} formData={formData} />
+			<Form formData={formData} setFormData={setFormData} />
 			<NoteList formData={formData} setFormData={setFormData} />
 		</div>
 	);

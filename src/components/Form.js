@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
-const Form = ({ setFormData, formData }) => {
+const Form = ({ formData, setFormData }) => {
+
 	const [input, setInput] = useState({
 		id: Math.random(),
 		date: new Date().toISOString(),
@@ -9,6 +10,7 @@ const Form = ({ setFormData, formData }) => {
 	});
 
 	const onChange = (e) => {
+
 		setInput({
 			...input,
 			[e.target.name]: e.target.value,
