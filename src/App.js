@@ -43,15 +43,19 @@ const App = () => {
 
 	// Search through notes
 	const searchNotes = () => {
-		if (searchInput === '') {
-			setFilterNotes(formData);
+		if (filterNotes.length) {
+			if (searchInput === '') {
+				setFilterNotes(formData);
+			} else {
+				setFilterNotes(filterNotes.filter(note => {
+					return note.title.toLowerCase().includes(searchInput.toLowerCase())
+				}));
+				setFilterNotes(filterNotes.filter(note => {
+					return note.note.toLowerCase().includes(searchInput.toLowerCase())
+				}));
+			}
 		} else {
-			setFilterNotes(filterNotes.filter(note => {
-				return note.title.toLowerCase().includes(searchInput.toLowerCase())
-			}));
-			setFilterNotes(filterNotes.filter(note => {
-				return note.note.toLowerCase().includes(searchInput.toLowerCase())
-			}));
+			return;
 		}
 	}
 

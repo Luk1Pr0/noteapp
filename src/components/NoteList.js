@@ -10,7 +10,7 @@ const NoteList = ({ formData, setFormData, setEditNote, setUpdating, searchInput
 		<div className='notelist-container'>
 			<FilterNotes searchInput={searchInput} setSearchInput={setSearchInput} />
 			<ul>
-				{!formData.length ?
+				{!formData ?
 					<Alert msg='No notes found!' />
 					:
 					formData.map(data => (
