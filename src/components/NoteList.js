@@ -3,11 +3,13 @@ import React from 'react';
 // Components
 import NoteItem from './NoteItem';
 import Alert from './Alert';
+import FilterNotes from './FilterNotes';
 
-const NoteList = ({ formData, setFormData, setEditNote, setUpdating }) => {
+const NoteList = ({ formData, setFormData, setEditNote, setUpdating, filteredNotes, setFilteredNotes }) => {
 
 	return (
 		<div className='notelist-container'>
+			<FilterNotes />
 			<ul>
 				{!formData.length ?
 					<Alert msg='No notes found!' />

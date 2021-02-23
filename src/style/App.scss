@@ -119,15 +119,37 @@ p {
 	background: rgba(240, 83, 66, 0.9);
 	width: 100%;
 	min-height: 40vh;
-	@include flex(row, center, flex-end);
+	@include flex(column, flex-end, center);
 	position: relative;
 	top: 90vh;
 	box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.2);
 
+	.filter-form {
+		width: 100%;
+		margin-top: 1rem;
+		
+		label {
+			margin: 1rem;
+			font-size: 1.5rem;
+			@include flex(column);
+
+			h3 {
+				margin: 1rem;
+			}
+
+			input {
+				@include inputStyle();
+				font-size: 1rem;
+				padding: 0.5rem;
+			}
+		}
+	}
+
 	ul {
-		@include flex(row, space-between);
+		@include flex(row, space-between, flex-start);
 		width: 50%;
 		min-height: 90vh;
+		background: red;
 	}
 }
 

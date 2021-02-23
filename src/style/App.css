@@ -165,20 +165,59 @@ p {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
   top: 90vh;
   -webkit-box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.2);
           box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.2);
+}
+
+.notelist-container .filter-form {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.notelist-container .filter-form label {
+  margin: 1rem;
+  font-size: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.notelist-container .filter-form label h3 {
+  margin: 1rem;
+}
+
+.notelist-container .filter-form label input {
+  color: #443b3a;
+  outline: none;
+  border: none;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 1rem;
+  font-size: 1rem;
+  padding: 0.5rem;
 }
 
 .notelist-container ul {
@@ -194,11 +233,12 @@ p {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   width: 50%;
   min-height: 90vh;
+  background: red;
 }
 
 li {

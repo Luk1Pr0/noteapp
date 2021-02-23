@@ -10,6 +10,7 @@ const App = () => {
 	const [formData, setFormData] = useState([]);
 	const [editNote, setEditNote] = useState({});
 	const [updating, setUpdating] = useState(false);
+	const [filteredNotes, setFilteredNotes] = useState([]);
 
 	useEffect(() => {
 		updateFromLocalStorage();
@@ -28,10 +29,22 @@ const App = () => {
 		setFormData(notes);
 	}
 
+	// const setFilter = () => {
+
+	// 	switch (key) {
+	// 		case value:
+
+	// 			break;
+
+	// 		default:
+	// 			break;
+	// 	}
+	// }
+
 	return (
 		<div className="App">
 			<Form formData={formData} setFormData={setFormData} editNote={editNote} updating={updating} setUpdating={setUpdating} />
-			<NoteList formData={formData} setFormData={setFormData} setEditNote={setEditNote} setUpdating={setUpdating} />
+			<NoteList formData={formData} setFormData={setFormData} setEditNote={setEditNote} setUpdating={setUpdating} filteredNotes={filteredNotes} setFilteredNotes={setFilteredNotes} />
 		</div>
 	);
 }
