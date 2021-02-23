@@ -56,7 +56,7 @@ const Form = ({ formData, setFormData, editNote, updating, setUpdating }) => {
 					<textarea type="text" name='note' onChange={onChange} value={input.note} required placeholder='Today I have learnt how to create state with react hooks...' />
 				</div>
 				<div className="form__btn__container">
-					<button>{updating === true ? 'Update Note' : 'Add Note'}</button>
+					<button>{updating ? 'Update Note' : 'Add Note'}</button>
 				</div>
 			</form>
 		</div>
