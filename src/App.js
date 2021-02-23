@@ -9,6 +9,7 @@ const App = () => {
 
 	const [formData, setFormData] = useState([]);
 	const [editNote, setEditNote] = useState({});
+	const [updating, setUpdating] = useState(false);
 
 	useEffect(() => {
 		updateFromLocalStorage();
@@ -29,8 +30,8 @@ const App = () => {
 
 	return (
 		<div className="App">
-			<Form formData={formData} setFormData={setFormData} editNote={editNote} />
-			<NoteList formData={formData} setFormData={setFormData} setEditNote={setEditNote} />
+			<Form formData={formData} setFormData={setFormData} editNote={editNote} updating={updating} setUpdating={setUpdating} />
+			<NoteList formData={formData} setFormData={setFormData} setEditNote={setEditNote} setUpdating={setUpdating} />
 		</div>
 	);
 }

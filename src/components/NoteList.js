@@ -4,7 +4,7 @@ import React from 'react';
 import NoteItem from './NoteItem';
 import Alert from './Alert';
 
-const NoteList = ({ formData, setFormData, setEditNote }) => {
+const NoteList = ({ formData, setFormData, setEditNote, setUpdating }) => {
 
 	return (
 		<div className='notelist-container'>
@@ -22,6 +22,7 @@ const NoteList = ({ formData, setFormData, setEditNote }) => {
 							formData={formData}
 							setFormData={setFormData}
 							setEditNote={setEditNote}
+							setUpdating={setUpdating}
 						/>
 					))
 				}

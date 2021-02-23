@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const Form = ({ formData, setFormData, editNote }) => {
+const Form = ({ formData, setFormData, editNote, updating, setUpdating }) => {
 
 	const [input, setInput] = useState({
 		id: Math.random(),
@@ -29,11 +29,12 @@ const Form = ({ formData, setFormData, editNote }) => {
 			title: '',
 			note: '',
 		});
+		setUpdating(false);
 	}
 
 	const editMode = () => {
 		const note = editNote[0];
-		// Remove the edited note so that there are no duplicated
+		// Remove the edited note so that there are no duplicates
 		const updatedFormData = formData.filter(data => data.id !== note.id);
 		if (note !== undefined) {
 			setInput({ ...note, });
@@ -55,7 +56,7 @@ const Form = ({ formData, setFormData, editNote }) => {
 					<textarea type="text" name='note' onChange={onChange} value={input.note} required placeholder='Today I have learnt how to create state with react hooks...' />
 				</div>
 				<div className="form__btn__container">
-					<button>Add Note</button>
+					<button>{updating === true ? 'Update Note' : 'Add Note'}</button>
 				</div>
 			</form>
 		</div>
