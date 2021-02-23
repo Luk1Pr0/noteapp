@@ -5,11 +5,11 @@ import NoteItem from './NoteItem';
 import Alert from './Alert';
 import FilterNotes from './FilterNotes';
 
-const NoteList = ({ formData, setFormData, setEditNote, setUpdating, filteredNotes, setFilteredNotes }) => {
+const NoteList = ({ formData, setFormData, setEditNote, setUpdating, searchInput, setSearchInput }) => {
 
 	return (
 		<div className='notelist-container'>
-			<FilterNotes />
+			<FilterNotes searchInput={searchInput} setSearchInput={setSearchInput} />
 			<ul>
 				{!formData.length ?
 					<Alert msg='No notes found!' />

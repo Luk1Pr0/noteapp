@@ -1,6 +1,11 @@
 import React from 'react';
 
-const FilterNotes = ({ filteredNotes, setFilteredNotes }) => {
+const FilterNotes = ({ setSearchInput }) => {
+
+	const onChange = (e) => {
+		setSearchInput(e.target.value);
+	}
+
 	return (
 		<div>
 			<form className='filter-form'>
@@ -14,7 +19,7 @@ const FilterNotes = ({ filteredNotes, setFilteredNotes }) => {
 				</label> */}
 				<label>
 					<h3>Search Notes</h3>
-					<input type="text" placeholder='My note...' />
+					<input type="text" placeholder='My note...' onChange={onChange} />
 				</label>
 			</form>
 		</div>

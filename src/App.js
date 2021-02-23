@@ -10,7 +10,9 @@ const App = () => {
 	const [formData, setFormData] = useState([]);
 	const [editNote, setEditNote] = useState({});
 	const [updating, setUpdating] = useState(false);
-	const [filteredNotes, setFilteredNotes] = useState([]);
+	const [searchInput, setSearchInput] = useState('');
+	const [filterNotes, setFilterNotes] = useState([]);
+	// const [searchNotesArray, setSearchNotesArray] = useState([]);
 
 	useEffect(() => {
 		updateFromLocalStorage();
@@ -20,31 +22,26 @@ const App = () => {
 		updateLocalStorage();
 	}, [formData]);
 
+	useEffect(() => {
+		searchNotes();
+	}, [searchInput]);
+
 	const updateLocalStorage = () => {
 		localStorage.setItem('notes', JSON.stringify(formData));
 	}
 
 	const updateFromLocalStorage = () => {
 		let notes = JSON.parse(localStorage.getItem('notes'));
-		setFormData(notes);
 	}
 
-	// const setFilter = () => {
-
-	// 	switch (key) {
-	// 		case value:
-
-	// 			break;
-
-	// 		default:
-	// 			break;
-	// 	}
-	// }
+	const searchNotes = () => {
+		console.log(searchInput);
+	}
 
 	return (
 		<div className="App">
 			<Form formData={formData} setFormData={setFormData} editNote={editNote} updating={updating} setUpdating={setUpdating} />
-			<NoteList formData={formData} setFormData={setFormData} setEditNote={setEditNote} setUpdating={setUpdating} filteredNotes={filteredNotes} setFilteredNotes={setFilteredNotes} />
+			<NoteList formData={formData} setFormData={setFormData} setEditNote={setEditNote} setUpdating={setUpdating} searchInput={searchInput} setSearchInput={setSearchInput} />
 		</div>
 	);
 }
