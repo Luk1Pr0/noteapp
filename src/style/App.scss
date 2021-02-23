@@ -1,3 +1,13 @@
+// Variables
+$primaryColor: rgb(245, 245, 245);
+$primaryBackground: rgb(240, 83, 66);
+$secondaryBackground: rgba(240, 83, 66, 0.9);
+$transparentBackground: rgba(255, 255, 255, 0.5);
+$liTransparentBackground: rgba(0, 0, 0, 0.6);
+$boxShadow: rgba(0, 0, 0, 0.2);
+$notifyColor: rgb(197, 248, 10);
+$maxTabletSize: 1200px;
+
 @mixin flex ($direction: row, $justify-content: center, $align-item: center) {
 	display: flex;
 	flex-wrap: wrap;
@@ -24,13 +34,13 @@
 body {
 	width: 100%;
 	min-height: 100vh;
-	color: whitesmoke;
+	color: $primaryColor;
 }
 
 button {
 	font-weight: 700;
-	border: 2px solid whitesmoke;
-	color: whitesmoke;
+	border: 2px solid $primaryColor;
+	color: $primaryColor;
 	outline: none;
 	background: transparent;
 	cursor: pointer;
@@ -48,46 +58,63 @@ p {
 	position: fixed;
 	
 	form {
-		background: rgb(240, 83, 66);
+		background: $primaryBackground;
 		border-radius: 2rem;
 		margin: 2rem 0;
 		min-width: 50%;
 		height: 70vh;
 		@include flex(column, center);
 		flex-wrap: wrap;
-		box-shadow: 10px -15px 20px 1px rgba(0, 0, 0, 0.2);
-	}
-}
+		box-shadow: 10px -15px 20px 1px $boxShadow;
 
-.input-container {
-	width: 50%;
-	height: auto;
-	@include flex(column);
-	flex-wrap: nowrap;
-	margin: 1rem;
+		// Tablet style
+		@media screen and (max-width: $maxTabletSize) {
+			width: 90%;
+			height: 80vh;
+			@include flex(column, space-around);
+		}
 
-	label {
-		width: 100%;
-		font-size: 2rem;
-		text-align: left;
-	}
+		.input-container {
+			width: 50%;
+			height: auto;
+			@include flex(column);
+			flex-wrap: nowrap;
+			margin: 1rem;
 
-	input {
-		@include inputStyle();
-		padding: 5px 0;
-		width: 100%;
-		font-size: 2rem;
-		background: rgba(255, 255, 255, 0.5);
-	}
+			// Tablet style
+			@media screen and (max-width: $maxTabletSize) {
+				width: 90%;
+			}
 
-	textarea {
-		@include inputStyle();
-		padding: 1rem;
-		min-width: 100%;
-		max-width: 100%;
-		min-height: 30vh;
-		font-size: 1.5rem;
-		text-align: left;
+			label {
+				width: 100%;
+				font-size: 2rem;
+				text-align: left;
+			}
+
+			input {
+				@include inputStyle();
+				padding: 5px 0;
+				width: 100%;
+				font-size: 2rem;
+				background: $transparentBackground;
+			}
+
+			textarea {
+				@include inputStyle();
+				padding: 1rem;
+				min-width: 100%;
+				max-width: 100%;
+				min-height: 30vh;
+				font-size: 1.5rem;
+				text-align: left;
+
+				// Tablet style
+				@media screen and (max-width: $maxTabletSize) {
+					min-height: 40vh;
+				}
+			}
+		}
 	}
 }
 
@@ -98,8 +125,8 @@ p {
 	button {
 		font-size: 1rem;
 		font-weight: 700;
-		border: 2px solid rgba(245, 245, 245, 0.5);
-		color: rgba(245, 245, 245, 0.5);
+		border: 2px solid $transparentBackground;
+		color: $transparentBackground;
 		padding: 0.5rem 1rem;
 		outline: none;
 		background: transparent;
@@ -108,21 +135,21 @@ p {
 		animation: heartbeat 1s 5s infinite;
 
 		&:hover {
-			border: 2px solid whitesmoke;
-			color: whitesmoke;
+			border: 2px solid $primaryColor;
+			color: $primaryColor;
 			animation: none;
 		}
 	}
 }
 
 .notelist-container {
-	background: rgba(240, 83, 66, 0.9);
+	background: $secondaryBackground;
 	width: 100%;
 	min-height: 40vh;
 	@include flex(column, flex-end, center);
 	position: relative;
 	top: 90vh;
-	box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 0 20px 5px $boxShadow;
 
 	.filter-form {
 		width: 100%;
@@ -148,7 +175,12 @@ p {
 	ul {
 		@include flex(row, space-between, flex-start);
 		width: 50%;
-		min-height: 90vh;
+		min-height: 100%;
+		
+		// Tablet style
+		@media screen and (max-width: $maxTabletSize) {
+			width: 100%;
+		}
 	}
 }
 
@@ -157,8 +189,8 @@ li {
 	flex-grow: 1;
 	min-height: 30vh;
 	list-style: none;
-	background: rgba(0, 0, 0, 0.6);
-	box-shadow: 0 10px 20px 1px rgba(0, 0, 0, 0.2);
+	background: $liTransparentBackground;
+	box-shadow: 0 10px 20px 1px $boxShadow;
 	padding: 1rem;
 	margin: 1rem;
 	@include flex(column, space-between);
@@ -173,11 +205,11 @@ li {
 
 			button {
 				padding: 0.2rem 0.6rem;
-				color: rgba(245, 245, 245, 0.5);
-				border: 2px solid rgba(245, 245, 245, 0.5);
+				color: $transparentBackground;
+				border: 2px solid $transparentBackground;
 				&:hover {
-					color: rgb(245, 245, 245);
-					border: 2px solid rgb(245, 245, 245);
+					color: $primaryColor;
+					border: 2px solid $primaryColor;
 				}
 			}
 		}
@@ -204,7 +236,7 @@ li {
 }
 
 .text--notify {
-	color: rgb(197, 248, 10);
+	color: $notifyColor;
 	font-weight: 700;
 }
 

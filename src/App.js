@@ -12,31 +12,36 @@ const App = () => {
 	const [updating, setUpdating] = useState(false);
 	const [searchInput, setSearchInput] = useState('');
 	const [filterNotes, setFilterNotes] = useState([]);
-	// const [searchNotesArray, setSearchNotesArray] = useState([]);
 
+	// Use effect on render
 	useEffect(() => {
 		updateFromLocalStorage();
 	}, []);
 
+	// Use effect when formData changes
 	useEffect(() => {
 		updateLocalStorage();
 		setFilterNotes(formData);
 
 	}, [formData]);
 
+	// Use effect when search input changes
 	useEffect(() => {
 		searchNotes();
 	}, [searchInput]);
 
+	// Save to local storage
 	const updateLocalStorage = () => {
 		localStorage.setItem('notes', JSON.stringify(formData));
 	}
 
+	// Update from local storage
 	const updateFromLocalStorage = () => {
 		let notes = JSON.parse(localStorage.getItem('notes'));
 		setFormData(notes);
 	}
 
+	// Search through notes
 	const searchNotes = () => {
 		if (searchInput === '') {
 			setFilterNotes(formData);
