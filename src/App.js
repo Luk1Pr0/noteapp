@@ -20,6 +20,8 @@ const App = () => {
 
 	useEffect(() => {
 		updateLocalStorage();
+		setFilterNotes(formData);
+
 	}, [formData]);
 
 	useEffect(() => {
@@ -32,16 +34,23 @@ const App = () => {
 
 	const updateFromLocalStorage = () => {
 		let notes = JSON.parse(localStorage.getItem('notes'));
+		setFormData(notes);
 	}
 
 	const searchNotes = () => {
-		console.log(searchInput);
+		if (searchInput === '') {
+			setFilterNotes(formData);
+		} else {
+			setFilterNotes(filterNotes.filter(note => {
+				return note.title.toLowerCase().includes(searchInput.toLowerCase());
+			}));
+		}
 	}
 
 	return (
 		<div className="App">
 			<Form formData={formData} setFormData={setFormData} editNote={editNote} updating={updating} setUpdating={setUpdating} />
-			<NoteList formData={formData} setFormData={setFormData} setEditNote={setEditNote} setUpdating={setUpdating} searchInput={searchInput} setSearchInput={setSearchInput} />
+			<NoteList formData={filterNotes} setFormData={setFormData} setEditNote={setEditNote} setUpdating={setUpdating} searchInput={searchInput} setSearchInput={setSearchInput} />
 		</div>
 	);
 }
