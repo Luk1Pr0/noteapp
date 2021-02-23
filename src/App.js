@@ -42,7 +42,10 @@ const App = () => {
 			setFilterNotes(formData);
 		} else {
 			setFilterNotes(filterNotes.filter(note => {
-				return note.title.toLowerCase().includes(searchInput.toLowerCase());
+				return note.title.toLowerCase().includes(searchInput.toLowerCase())
+			}));
+			setFilterNotes(filterNotes.filter(note => {
+				return note.note.toLowerCase().includes(searchInput.toLowerCase())
 			}));
 		}
 	}
