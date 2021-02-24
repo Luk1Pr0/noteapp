@@ -51,7 +51,7 @@ const App = () => {
 				if (note.title.toLowerCase().includes(searchInput.toLowerCase())) {
 					return note;
 				} else if (note.note.toLowerCase().includes(searchInput.toLowerCase())) {
-					return note
+					return note;
 				}
 			}))
 		} else {
@@ -62,7 +62,7 @@ const App = () => {
 	return (
 		<div className="App">
 			<Form formData={formData} setFormData={setFormData} editNote={editNote} updating={updating} setUpdating={setUpdating} />
-			<NoteList formData={notesArray} setFormData={setFormData} setEditNote={setEditNote} setUpdating={setUpdating} searchInput={searchInput} setSearchInput={setSearchInput} />
+			<NoteList formData={searchInput === '' ? formData : notesArray} setFormData={setFormData} setEditNote={setEditNote} setUpdating={setUpdating} searchInput={searchInput} setSearchInput={setSearchInput} />
 		</div>
 	);
 }
