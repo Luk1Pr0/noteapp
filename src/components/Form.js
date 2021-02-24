@@ -37,7 +37,7 @@ const Form = ({ formData, setFormData, editNote, updating, setUpdating }) => {
 		// Remove the edited note so that there are no duplicates
 		const updatedFormData = formData.filter(data => data.id !== note.id);
 		if (note !== undefined) {
-			setInput({ ...note, });
+			setInput({ ...note });
 		} else {
 			return;
 		}

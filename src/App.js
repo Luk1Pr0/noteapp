@@ -16,13 +16,13 @@ const App = () => {
 	// Use effect on render
 	useEffect(() => {
 		updateFromLocalStorage();
+		setFilterNotes(formData);
 	}, []);
 
 	// Use effect when formData changes
 	useEffect(() => {
 		updateLocalStorage();
 		setFilterNotes(formData);
-
 	}, [formData]);
 
 	// Use effect when search input changes
@@ -55,7 +55,7 @@ const App = () => {
 				}));
 			}
 		} else {
-			return;
+			setFilterNotes(formData);
 		}
 	}
 
