@@ -7,22 +7,21 @@ import NoteList from './components/NoteList';
 
 const App = () => {
 
+	// State
 	const [formData, setFormData] = useState([]);
+	const [notesArray, setNotesArray] = useState([]);
 	const [editNote, setEditNote] = useState({});
 	const [updating, setUpdating] = useState(false);
 	const [searchInput, setSearchInput] = useState('');
-	const [filterNotes, setFilterNotes] = useState([]);
 
 	// Use effect on render
 	useEffect(() => {
 		updateFromLocalStorage();
-		setFilterNotes(formData);
 	}, []);
 
 	// Use effect when formData changes
 	useEffect(() => {
 		updateLocalStorage();
-		setFilterNotes(formData);
 	}, [formData]);
 
 	// Use effect when search input changes
@@ -37,32 +36,33 @@ const App = () => {
 
 	// Update from local storage
 	const updateFromLocalStorage = () => {
-		let notes = JSON.parse(localStorage.getItem('notes'));
-		setFormData(notes);
+		if (localStorage.getItem('notes') === null) {
+			localStorage.setItem('notes', JSON.stringify([]));
+		} else {
+			let notes = JSON.parse(localStorage.getItem('notes'));
+			setFormData(notes);
+			setNotesArray(notes);
+		}
 	}
 
-	// Search through notes
 	const searchNotes = () => {
-		if (filterNotes.length) {
-			if (searchInput === '') {
-				setFilterNotes(formData);
-			} else {
-				setFilterNotes(filterNotes.filter(note => {
-					return note.title.toLowerCase().includes(searchInput.toLowerCase())
-				}));
-				setFilterNotes(filterNotes.filter(note => {
-					return note.note.toLowerCase().includes(searchInput.toLowerCase())
-				}));
-			}
+		if (searchInput !== '') {
+			setNotesArray(formData.filter(note => {
+				if (note.title.toLowerCase().includes(searchInput.toLowerCase())) {
+					return note;
+				} else if (note.note.toLowerCase().includes(searchInput.toLowerCase())) {
+					return note
+				}
+			}))
 		} else {
-			setFilterNotes(formData);
+			setNotesArray(formData);
 		}
 	}
 
 	return (
 		<div className="App">
 			<Form formData={formData} setFormData={setFormData} editNote={editNote} updating={updating} setUpdating={setUpdating} />
-			<NoteList formData={filterNotes} setFormData={setFormData} setEditNote={setEditNote} setUpdating={setUpdating} searchInput={searchInput} setSearchInput={setSearchInput} />
+			<NoteList formData={notesArray} setFormData={setFormData} setEditNote={setEditNote} setUpdating={setUpdating} searchInput={searchInput} setSearchInput={setSearchInput} />
 		</div>
 	);
 }
