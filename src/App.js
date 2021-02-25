@@ -45,18 +45,15 @@ const App = () => {
 		}
 	}
 
+	// Search through notes based on input
 	const searchNotes = () => {
-		if (searchInput !== '') {
-			setNotesArray(formData.filter(note => {
-				if (note.title.toLowerCase().includes(searchInput.toLowerCase())) {
-					return note;
-				} else if (note.note.toLowerCase().includes(searchInput.toLowerCase())) {
-					return note;
-				}
-			}))
-		} else {
-			setNotesArray(formData);
-		}
+		setNotesArray(formData.filter(note => {
+			if (note.title.toLowerCase().includes(searchInput.toLowerCase())) {
+				return note;
+			} else if (note.note.toLowerCase().includes(searchInput.toLowerCase())) {
+				return note;
+			}
+		}))
 	}
 
 	return (
