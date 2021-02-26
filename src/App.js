@@ -4,6 +4,7 @@ import './style/App.css';
 // Components
 import Form from './components/Form';
 import NoteList from './components/NoteList';
+import DeleteAlert from './components/DeleteAlert';
 
 const App = () => {
 
@@ -56,9 +57,14 @@ const App = () => {
 		}))
 	}
 
+	// When user clicks on the delete button display alert
+	// If user clicks delete on alert then remove the note
+	// If user clicks cancel then put the note back in the array
+
 	return (
 		<div className="App">
 			<Form formData={formData} setFormData={setFormData} editNote={editNote} updating={updating} setUpdating={setUpdating} />
+			<DeleteAlert />
 			<NoteList formData={searchInput === '' ? formData : notesArray} setFormData={setFormData} setEditNote={setEditNote} setUpdating={setUpdating} searchInput={searchInput} setSearchInput={setSearchInput} />
 		</div>
 	);

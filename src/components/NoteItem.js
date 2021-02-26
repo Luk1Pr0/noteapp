@@ -1,5 +1,8 @@
 import React from 'react';
 
+// Components
+import DeleteAlert from './DeleteAlert';
+
 const NoteItem = ({ date, title, content, id, formData, setFormData, setEditNote, setUpdating }) => {
 
 	const splitDate = date.split('T');
@@ -13,7 +16,7 @@ const NoteItem = ({ date, title, content, id, formData, setFormData, setEditNote
 			setEditNote(filterNote);
 			setUpdating(true);
 		} else {
-			setFormData(formData.filter(note => note.id !== id));
+			// setFormData(formData.filter(note => note.id !== id));
 		}
 	}
 
