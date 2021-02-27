@@ -1,6 +1,9 @@
 import React from 'react';
 
-const NoteItem = ({ date, title, content, id, formData, setFormData, setEditNote, setUpdating }) => {
+// Components
+import DeleteAlert from './DeleteAlert';
+
+const NoteItem = ({ date, title, content, id, formData, setFormData, setEditNote, setUpdating, setDeleteAlert }) => {
 
 	const splitDate = date.split('T');
 	const formattedDate = splitDate[0].split('-').reverse().join('/');
@@ -13,7 +16,8 @@ const NoteItem = ({ date, title, content, id, formData, setFormData, setEditNote
 			setEditNote(filterNote);
 			setUpdating(true);
 		} else {
-			setFormData(formData.filter(note => note.id !== id));
+			// setFormData(formData.filter(note => note.id !== id));
+			setDeleteAlert(true);
 		}
 	}
 

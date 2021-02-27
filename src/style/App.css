@@ -367,6 +367,50 @@ li .content-container {
   font-weight: 700;
 }
 
+.delete-alert {
+  background: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: whitesmoke;
+}
+
+.delete-alert .btn-container {
+  margin: 2rem;
+}
+
+.delete-alert .btn-container button {
+  margin: 2rem;
+  padding: 8px 10px;
+  font-size: 1rem;
+}
+
+.delete-alert .btn-container .btn--red:hover {
+  background: red;
+  border: 2px solid transparent;
+}
+
+.delete-alert .btn-container .btn--green:hover {
+  background: limegreen;
+  border: 2px solid transparent;
+}
+
 @-webkit-keyframes heartbeat {
   0% {
     color: whitesmoke;

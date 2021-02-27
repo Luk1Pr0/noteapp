@@ -5,7 +5,7 @@ import NoteItem from './NoteItem';
 import Alert from './Alert';
 import FilterNotes from './FilterNotes';
 
-const NoteList = ({ formData, setFormData, setEditNote, setUpdating, searchInput, setSearchInput }) => {
+const NoteList = ({ formData, setFormData, setEditNote, setUpdating, searchInput, setSearchInput, setDeleteAlert }) => {
 	return (
 		<div className='notelist-container'>
 			<FilterNotes searchInput={searchInput} setSearchInput={setSearchInput} />
@@ -24,6 +24,7 @@ const NoteList = ({ formData, setFormData, setEditNote, setUpdating, searchInput
 							setFormData={setFormData}
 							setEditNote={setEditNote}
 							setUpdating={setUpdating}
+							setDeleteAlert={setDeleteAlert}
 						/>
 					))
 				}

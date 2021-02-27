@@ -4,6 +4,7 @@ import './style/App.css';
 // Components
 import Form from './components/Form';
 import NoteList from './components/NoteList';
+import DeleteAlert from './components/DeleteAlert';
 
 const App = () => {
 
@@ -13,6 +14,8 @@ const App = () => {
 	const [editNote, setEditNote] = useState({});
 	const [updating, setUpdating] = useState(false);
 	const [searchInput, setSearchInput] = useState('');
+	const [deleteAlert, setDeleteAlert] = useState(false);
+	const [confirmDelete, setConfirmDelete] = useState(false);
 
 	// Use effect on render
 	useEffect(() => {
@@ -58,8 +61,9 @@ const App = () => {
 
 	return (
 		<div className="App">
+			{deleteAlert ? <DeleteAlert setDeleteAlert={setDeleteAlert} setConfirmDelete={setConfirmDelete} /> : null}
 			<Form formData={formData} setFormData={setFormData} editNote={editNote} updating={updating} setUpdating={setUpdating} />
-			<NoteList formData={searchInput === '' ? formData : notesArray} setFormData={setFormData} setEditNote={setEditNote} setUpdating={setUpdating} searchInput={searchInput} setSearchInput={setSearchInput} />
+			<NoteList formData={searchInput === '' ? formData : notesArray} setFormData={setFormData} setEditNote={setEditNote} setUpdating={setUpdating} searchInput={searchInput} setSearchInput={setSearchInput} setDeleteAlert={setDeleteAlert} />
 		</div>
 	);
 }
