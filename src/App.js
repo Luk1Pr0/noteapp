@@ -67,7 +67,7 @@ const App = () => {
 		<div className="App">
 			{deleteAlert ? <DeleteAlert setDeleteAlert={setDeleteAlert} setConfirmDelete={setConfirmDelete} /> : null}
 			<Form formData={formData} setFormData={setFormData} editNote={editNote} updating={updating} setUpdating={setUpdating} />
-			<NoteList formData={searchInput === '' ? formData : notesArray} setFormData={setFormData} setEditNote={setEditNote} setUpdating={setUpdating} searchInput={searchInput} setSearchInput={setSearchInput} setDeleteAlert={setDeleteAlert} />
+			<NoteList formData={searchInput === '' ? formData : notesArray} setFormData={setFormData} setEditNote={setEditNote} setUpdating={setUpdating} searchInput={searchInput} setSearchInput={setSearchInput} setDeleteAlert={setDeleteAlert} confirmDelete={confirmDelete} />
 		</div>
 	);
 }
