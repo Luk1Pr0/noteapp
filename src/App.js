@@ -59,10 +59,6 @@ const App = () => {
 		}))
 	}
 
-	// When user clicks on the delete button display alert
-	// If user clicks delete on alert then remove the note
-	// If user clicks cancel then put the note back in the array
-
 	return (
 		<div className="App">
 			{deleteAlert ? <DeleteAlert setDeleteAlert={setDeleteAlert} setConfirmDelete={setConfirmDelete} /> : null}
