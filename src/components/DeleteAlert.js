@@ -1,14 +1,9 @@
 import React from 'react';
 
-const DeleteAlert = ({ setDeleteAlert, setConfirmDelete, confirmDelete }) => {
+const DeleteAlert = ({ }) => {
 
 	const onClick = (confirm) => {
-		if (confirm === 'delete') {
-			setConfirmDelete(true);
-		} else {
-			setConfirmDelete(false);
-		}
-		setDeleteAlert(false);
+		console.log(confirm);
 	}
 
 	return (

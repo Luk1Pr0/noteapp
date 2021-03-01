@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
-const NoteItem = ({ date, title, content, id, formData, setFormData, setEditNote, setUpdating, setDeleteAlert, confirmDelete }) => {
+const NoteItem = ({ date, title, content, id, formData, setFormData, setEditNote, setUpdating, }) => {
 
 	const splitDate = date.split('T');
 	const formattedDate = splitDate[0].split('-').reverse().join('/');
@@ -13,19 +13,9 @@ const NoteItem = ({ date, title, content, id, formData, setFormData, setEditNote
 			setEditNote(filterNote);
 			setUpdating(true);
 		} else {
-			// setFormData(formData.filter(note => note.id !== id))
-			setDeleteAlert(true);
+			setFormData(formData.filter(note => note.id !== id));
 		}
 	}
-
-	useEffect(() => {
-		if (confirmDelete === true) {
-			setFormData(formData.filter(note => note.id !== id))
-		} else {
-			setFormData(formData);
-		}
-	}, [confirmDelete]);
-
 
 	return (
 		<li>
