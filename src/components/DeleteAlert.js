@@ -1,9 +1,12 @@
 import React from 'react';
 
-const DeleteAlert = ({ }) => {
+const DeleteAlert = ({ deleteNote, setDeleteNote, formData, setFormData }) => {
 
 	const onClick = (confirm) => {
-		console.log(confirm);
+		if (confirm === 'delete') {
+			setFormData(formData.filter(note => note.id !== deleteNote.id));
+		}
+		setDeleteNote(null);
 	}
 
 	return (

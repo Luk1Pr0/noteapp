@@ -12,9 +12,9 @@ const App = () => {
 	const [formData, setFormData] = useState([]);
 	const [notesArray, setNotesArray] = useState([]);
 	const [editNote, setEditNote] = useState({});
+	const [deleteNote, setDeleteNote] = useState(null);
 	const [updating, setUpdating] = useState(false);
 	const [searchInput, setSearchInput] = useState('');
-	const [deleteAlert, setDeleteAlert] = useState(false);
 
 	// Use effect on render
 	useEffect(() => {
@@ -60,9 +60,9 @@ const App = () => {
 
 	return (
 		<div className="App">
-			{deleteAlert ? <DeleteAlert /> : null}
+			{deleteNote !== null ? <DeleteAlert deleteNote={deleteNote} setDeleteNote={setDeleteNote} formData={formData} setFormData={setFormData} /> : null}
 			<Form formData={formData} setFormData={setFormData} editNote={editNote} updating={updating} setUpdating={setUpdating} />
-			<NoteList formData={searchInput === '' ? formData : notesArray} setFormData={setFormData} setEditNote={setEditNote} setUpdating={setUpdating} searchInput={searchInput} setSearchInput={setSearchInput} />
+			<NoteList formData={searchInput === '' ? formData : notesArray} setFormData={setFormData} setEditNote={setEditNote} setUpdating={setUpdating} searchInput={searchInput} setSearchInput={setSearchInput} setDeleteNote={setDeleteNote} />
 		</div>
 	);
 }
