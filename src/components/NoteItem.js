@@ -1,6 +1,6 @@
 import React from 'react';
 
-const NoteItem = ({ date, title, content, id, formData, setFormData, setEditNote, setUpdating, setDeleteNote }) => {
+const NoteItem = ({ date, title, content, id, formData, setEditNote, setUpdating, setDeleteNote }) => {
 
 	const splitDate = date.split('T');
 	const formattedDate = splitDate[0].split('-').reverse().join('/');
