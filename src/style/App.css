@@ -422,7 +422,7 @@ li .content-container {
 }
 
 .delete-alert {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.8);
   width: 100%;
   height: 100vh;
   position: fixed;
@@ -466,7 +466,7 @@ li .content-container {
 }
 
 .warning-container {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.8);
   width: 100%;
   height: 100vh;
   position: fixed;

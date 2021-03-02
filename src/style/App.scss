@@ -4,6 +4,7 @@ $primaryBackground: rgb(240, 83, 66);
 $secondaryBackground: rgba(240, 83, 66, 0.9);
 $transparentBackground: rgba(255, 255, 255, 0.5);
 $liTransparentBackground: rgba(0, 0, 0, 0.6);
+$darkOpacityBackground: rgba(0, 0, 0, 0.8);
 $boxShadow: rgba(0, 0, 0, 0.2);
 $notifyColor: rgb(197, 248, 10);
 $maxTabletSize: 1200px;
@@ -257,7 +258,7 @@ li {
 }
 
 .delete-alert {
-	background: rgba(0, 0, 0, 0.7);
+	background: $darkOpacityBackground;
 	width: 100%;
 	height: 100vh;
 	position: fixed;
@@ -292,7 +293,7 @@ li {
 
 // Warning container styling
 .warning-container {
-	background:  $liTransparentBackground;
+	background:  $darkOpacityBackground;
 	width: 100%;
 	height: 100vh;
 	position: fixed;
