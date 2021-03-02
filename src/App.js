@@ -5,6 +5,7 @@ import './style/App.css';
 import Form from './components/Form';
 import NoteList from './components/NoteList';
 import DeleteAlert from './components/DeleteAlert';
+import Warning from './components/Warning';
 
 const App = () => {
 
@@ -15,6 +16,7 @@ const App = () => {
 	const [deleteNote, setDeleteNote] = useState(null);
 	const [updating, setUpdating] = useState(false);
 	const [searchInput, setSearchInput] = useState('');
+	const [warning, setWarning] = useState(false);
 
 	// Use effect on render
 	useEffect(() => {
@@ -61,8 +63,9 @@ const App = () => {
 	return (
 		<div className="App">
 			{deleteNote !== null ? <DeleteAlert deleteNote={deleteNote} setDeleteNote={setDeleteNote} formData={formData} setFormData={setFormData} /> : null}
+			{warning ? <Warning msg='Another note is already being edited, please save it first!' /> : null}
 			<Form formData={formData} setFormData={setFormData} editNote={editNote} updating={updating} setUpdating={setUpdating} />
-			<NoteList formData={searchInput === '' ? formData : notesArray} setFormData={setFormData} setEditNote={setEditNote} setUpdating={setUpdating} searchInput={searchInput} setSearchInput={setSearchInput} setDeleteNote={setDeleteNote} />
+			<NoteList formData={searchInput === '' ? formData : notesArray} setFormData={setFormData} setEditNote={setEditNote} updating={updating} setUpdating={setUpdating} searchInput={searchInput} setSearchInput={setSearchInput} setDeleteNote={setDeleteNote} setWarning={setWarning} />
 		</div>
 	);
 }
