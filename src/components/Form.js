@@ -13,6 +13,10 @@ const Form = ({ formData, setFormData, editNote, updating, setUpdating }) => {
 		editMode();
 	}, [editNote]);
 
+	useEffect(() => {
+		warnBeforeRefresh();
+	}, [input]);
+
 	const onChange = (e) => {
 		setInput({
 			...input,
@@ -42,6 +46,15 @@ const Form = ({ formData, setFormData, editNote, updating, setUpdating }) => {
 			return;
 		}
 		setFormData(updatedFormData);
+	}
+
+	const warnBeforeRefresh = () => {
+		if (!input.title.length || !input.note.length) {
+			window.addEventListener('beforeunload', (e) => {
+				e.preventDefault();
+				e.returnValue = '';
+			});
+		}
 	}
 
 	return (
