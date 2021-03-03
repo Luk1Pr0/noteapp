@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Varela&display=swap");
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -11,7 +12,7 @@ body {
   width: 100%;
   min-height: 100vh;
   color: whitesmoke;
-  font-family: serif;
+  font-family: "Varela", sans-serif;
 }
 
 button {
@@ -23,7 +24,7 @@ button {
   cursor: pointer;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
-  font-family: serif;
+  font-family: "Varela", sans-serif;
 }
 
 p {
@@ -143,23 +144,23 @@ p {
   width: 100%;
   font-size: 2rem;
   background: rgba(255, 255, 255, 0.5);
-  font-family: serif;
+  font-family: "Varela", sans-serif;
 }
 
 .form-container form .input-container input::-webkit-input-placeholder {
-  font-family: serif;
+  font-family: "Varela", sans-serif;
 }
 
 .form-container form .input-container input:-ms-input-placeholder {
-  font-family: serif;
+  font-family: "Varela", sans-serif;
 }
 
 .form-container form .input-container input::-ms-input-placeholder {
-  font-family: serif;
+  font-family: "Varela", sans-serif;
 }
 
 .form-container form .input-container input::placeholder {
-  font-family: serif;
+  font-family: "Varela", sans-serif;
 }
 
 .form-container form .input-container textarea {
@@ -174,23 +175,23 @@ p {
   min-height: 30vh;
   font-size: 1.5rem;
   text-align: left;
-  font-family: serif;
+  font-family: "Varela", sans-serif;
 }
 
 .form-container form .input-container textarea::-webkit-input-placeholder {
-  font-family: serif;
+  font-family: "Varela", sans-serif;
 }
 
 .form-container form .input-container textarea:-ms-input-placeholder {
-  font-family: serif;
+  font-family: "Varela", sans-serif;
 }
 
 .form-container form .input-container textarea::-ms-input-placeholder {
-  font-family: serif;
+  font-family: "Varela", sans-serif;
 }
 
 .form-container form .input-container textarea::placeholder {
-  font-family: serif;
+  font-family: "Varela", sans-serif;
 }
 
 @media screen and (max-width: 1200px) {
@@ -288,23 +289,23 @@ p {
   border-radius: 1rem;
   font-size: 1rem;
   padding: 0.5rem;
-  font-family: serif;
+  font-family: "Varela", sans-serif;
 }
 
 .notelist-container .filter-form label input::-webkit-input-placeholder {
-  font-family: serif;
+  font-family: "Varela", sans-serif;
 }
 
 .notelist-container .filter-form label input:-ms-input-placeholder {
-  font-family: serif;
+  font-family: "Varela", sans-serif;
 }
 
 .notelist-container .filter-form label input::-ms-input-placeholder {
-  font-family: serif;
+  font-family: "Varela", sans-serif;
 }
 
 .notelist-container .filter-form label input::placeholder {
-  font-family: serif;
+  font-family: "Varela", sans-serif;
 }
 
 .notelist-container ul {

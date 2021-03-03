@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela&display=swap');
+
 // Variables
 $primaryColor: rgb(245, 245, 245);
 $primaryBackground: rgb(240, 83, 66);
@@ -8,7 +10,7 @@ $darkOpacityBackground: rgba(0, 0, 0, 0.8);
 $boxShadow: rgba(0, 0, 0, 0.2);
 $notifyColor: rgb(197, 248, 10);
 $maxTabletSize: 1200px;
-$font: serif;
+$font: 'Varela', sans-serif;
 
 @mixin flex ($direction: row, $justify-content: center, $align-item: center) {
 	display: flex;
