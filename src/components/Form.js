@@ -34,6 +34,9 @@ const Form = ({ formData, setFormData, editNote, updating, setUpdating }) => {
 			note: '',
 		});
 		setUpdating(false);
+
+		// After the form input has been submitted then do not do anything before reloading page
+		window.removeEventListener('beforeunload', preventRefresh);
 	}
 
 	const editMode = () => {
@@ -48,12 +51,16 @@ const Form = ({ formData, setFormData, editNote, updating, setUpdating }) => {
 		setFormData(updatedFormData);
 	}
 
+	// Stop page from refreshing
+	const preventRefresh = (e) => {
+		e.preventDefault();
+		e.returnValue = '';
+	}
+
+	// If input is empty then warn user before they reload the page
 	const warnBeforeRefresh = () => {
-		if (!input.title.length || !input.note.length) {
-			window.addEventListener('beforeunload', (e) => {
-				e.preventDefault();
-				e.returnValue = '';
-			});
+		if (input.title.length !== 0 || input.note.length !== 0) {
+			window.addEventListener('beforeunload', preventRefresh);
 		}
 	}
 
